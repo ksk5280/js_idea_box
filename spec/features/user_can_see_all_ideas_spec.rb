@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature "Use can see all ideas" do
   scenario "they see title, body, and quality for each idea" do
     idea1 = Idea.create(title: "Idea title", body: "Idea body", quality: "genius")
-    idea2 = Idea.create(title: "Idea title 2", body: "Idea body 2")
+    idea2 = Idea.create(title: "Idea title 2", body: "Idea body 2", quality: "swill")
     visit "/"
 
     expect(page).to have_content "Idea title"
