@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :idea do
     title "Title"
     body "Body"
-    quality 0
+    quality "swill"
   end
 end
