@@ -1,0 +1,10 @@
+<h1>All The Great Ideas That Come Out Of My Head</h1>
+<div class="ideas">
+  <% @ideas.each do |idea| %>
+  <div class="idea">
+      <h3 class="title"><%= idea.title %></h3>
+      <h5 class="body"><%= idea.truncated_body %></h5>
+      <p class="quality"><%= idea.quality %></p>
+    </div>
+  <% end %>
+</div>
