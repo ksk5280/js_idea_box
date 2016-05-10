@@ -28,5 +28,15 @@ RSpec.feature "Use can see all ideas" do
 
     expect(page).to have_content "Idea title"
     expect(page).to have_content expected
+    expect(page).to have_content "swill"
+  end
+
+  scenario "they see ideas in descending chronological order" do
+    older_idea = Idea.create(title: "Older idea", body: "Older idea body", quality: "genius")
+    newer_idea = Idea.create(title: "Newer idea", body: "Newer idea body", quality: "swill")
+
+    visit "/"
+
+    expect(page.body.index(newer_idea.title)).to be < page.body.index(older_idea.title)
   end
 end
