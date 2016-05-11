@@ -5,6 +5,10 @@ function saveIdea () {
       'body': $('#body').val()
     };
   $.post('/api/v1/ideas', data, ideaSaved);
+  clearFields;
+}
+
+function clearFields () {
   $('#title').val(''),
   $('#body').val('')
 }
