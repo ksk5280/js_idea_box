@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "User can add ideas", type: :feature do
+RSpec.feature "User can add ideas" do
   scenario "they see new idea on page", js: true do
     visit "/"
 

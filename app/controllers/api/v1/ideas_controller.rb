@@ -7,6 +7,10 @@ class Api::V1::IdeasController < ApiController
     respond_with Idea.create(idea_params), location: nil
   end
 
+  def destroy
+    respond_with Idea.find(params[:id]).destroy
+  end
+
   private
 
     def idea_params
