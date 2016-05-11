@@ -8,6 +8,8 @@ function saveIdea () {
       'body': $('#body').val()
     };
   $.post('/api/v1/ideas', data, ideaSaved);
+  $('#title').val(''),
+  $('#body').val('')
 }
 
 function ideaSaved (response) {
