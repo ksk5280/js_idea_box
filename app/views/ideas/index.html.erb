@@ -4,10 +4,10 @@
 <%= form_tag('/api/v1/ideas', remote: true) do %>
   <%= text_field_tag 'title', nil, placeholder: 'Title' %>
   <%= text_field_tag 'body', nil, placeholder: 'Body' %>
-  <%= button_tag "Save" %>
+  <%= button_tag "Save", type: 'button', onclick: 'saveIdea();' %>
 <% end %>
 
-<div class="ideas">
+<div id="ideas" class="ideas">
   <% @ideas.each do |idea| %>
     <div class="idea">
       <h3 class="title"><%= idea.title %></h3>

@@ -4,7 +4,8 @@ class Api::V1::IdeasController < ApiController
   end
 
   def create
-    respond_with Idea.create(idea_params)
+    @idea = Idea.create(idea_params)
+    respond_with :api, :v1, @idea, location: nil
   end
 
   private
