@@ -1,6 +1,3 @@
-$(document).ready(function(){
-});
-
 function saveIdea () {
   var
     data = {
@@ -13,8 +10,7 @@ function saveIdea () {
 }
 
 function ideaSaved (response) {
-  var
-    content = '';
+  var content = '';
 
   content += '<div class="idea">';
   content += sprintf('<h3 class="title">%s</h3>', response.title);

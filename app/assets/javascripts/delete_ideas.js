@@ -1,0 +1,3 @@
+var deleteIdea = function(){
+  
+}
