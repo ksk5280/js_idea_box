@@ -1,5 +1,5 @@
 function changeQuality () {
-  var qualityObject = $(this).siblings("[class='quality']")
+  var qualityObject = $(this).siblings("[class='quality']");
   var qualityHtml = qualityObject.html();
 
   if ($(this).hasClass("thumbs-up")) {

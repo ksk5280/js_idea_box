@@ -5,8 +5,8 @@ function renderIdea(response) {
     content = '';
 
   content += sprintf('<div class="idea" id="idea-%s">', response.id);
-  content += sprintf('<h3 class="title">%s</h3>', response.title);
-  content += sprintf('<h5 class="body">%s</h5>', response.body);
+  content += sprintf('<h3 class="title"contenteditable="true" >%s</h3>', response.title);
+  content += sprintf('<h5 class="body"contenteditable="true" >%s</h5>', response.body);
   content += sprintf('<p class="quality">%s</p>', response.quality);
   content += sprintf('<button type="button" name="delete" id="%s"', response.id);
   content += sprintf('class="delete-button">%s</button>', 'Delete');
