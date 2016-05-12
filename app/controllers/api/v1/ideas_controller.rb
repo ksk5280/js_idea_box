@@ -7,6 +7,11 @@ class Api::V1::IdeasController < ApiController
     respond_with Idea.create(idea_params), location: nil
   end
 
+  def update
+    idea = Idea.find(params[:id])
+    respond_with idea.update(idea_params)
+  end
+
   def destroy
     respond_with Idea.find(params[:id]).destroy
   end
@@ -14,6 +19,6 @@ class Api::V1::IdeasController < ApiController
   private
 
     def idea_params
-      params.permit(:title, :body)
+      params.permit(:title, :body, :quality)
     end
 end

@@ -1,12 +1,11 @@
-$('body').on('click', 'button.delete-button', function() {
-  console.log('clicked', this.id);
+function deleteButtonClicked () {
   $.ajax({
     url: "api/v1/ideas/" + this.id,
     method: "DELETE",
     success: ideaDeleted(this.id)
   });
-})
+}
 
-var ideaDeleted = function(id) {
+function ideaDeleted (id) {
   $('#idea-' + id).remove();
 }
