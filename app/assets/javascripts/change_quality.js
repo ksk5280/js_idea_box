@@ -1,23 +1,12 @@
-function thumbsUpClicked () {
+function changeQuality () {
   var qualityObject = $(this).siblings("[class='quality']")
   var qualityHtml = qualityObject.html();
 
-  updatedQualityHtml = increaseQuality(qualityHtml);
-
-  $.ajax({
-    url: "api/v1/ideas/" + this.id,
-    method: "PATCH",
-    data: { 'quality' : updatedQualityHtml },
-    success: updateIdea(this.id, qualityObject, updatedQualityHtml)
-  });
-}
-
-function thumbsDownClicked () {
-  console.log('thumbsDownClicked')
-  var qualityObject = $(this).siblings("[class='quality']")
-  var qualityHtml = qualityObject.html();
-
-  updatedQualityHtml = decreaseQuality(qualityHtml);
+  if ($(this).hasClass("thumbs-up")) {
+    updatedQualityHtml = increaseQuality(qualityHtml);
+  } else {
+    updatedQualityHtml = decreaseQuality(qualityHtml);
+  }
 
   $.ajax({
     url: "api/v1/ideas/" + this.id,

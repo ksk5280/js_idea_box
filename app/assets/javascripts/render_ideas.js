@@ -19,14 +19,10 @@ function renderIdea(response) {
   ideaDiv = $(content);
   $('#ideas').prepend(ideaDiv);
 
-  deleteButton = ideaDiv.find('.delete-button');
-  deleteButton.on('click', deleteButtonClicked);
-
-  thumbsUpButton = ideaDiv.find('.thumbs-up');
-  thumbsUpButton.on('click', thumbsUpClicked);
-
-  thumbsDownButton = ideaDiv.find('.thumbs-down');
-  thumbsDownButton.on('click', thumbsDownClicked);
+// Add event listeners to each button
+  $('.delete-button').on('click', deleteButtonClicked);
+  $('.thumbs-up').on('click', changeQuality);
+  $('.thumbs-down').on('click', changeQuality);
 }
 
 function getIdeas() {
