@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(document).ready(function(){
+  renderIdeas();
+});
+
+var renderIdeas = function(){
+  $.get('/api/v1/ideas', function(ideas){
+    ideas.forEach(function(idea){
+      ideaSaved(idea);
+    });
+  });
+}

@@ -4,8 +4,11 @@ class Api::V1::IdeasController < ApiController
   end
 
   def create
-    @idea = Idea.create(idea_params)
-    respond_with :api, :v1, @idea, location: nil
+    respond_with Idea.create(idea_params), location: nil
+  end
+
+  def destroy
+    respond_with Idea.find(params[:id]).destroy
   end
 
   private
