@@ -12,5 +12,11 @@ RSpec.feature "User can add ideas" do
       expect(page).to have_content "Idea Title"
       expect(page).to have_content "Idea Body"
     end
+
+    visit "/"
+    within ".ideas" do
+      expect(page).to have_content "Idea Title"
+      expect(page).to have_content "Idea Body"
+    end
   end
 end
