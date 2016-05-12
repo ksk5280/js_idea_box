@@ -16,8 +16,8 @@ function changeQuality () {
   });
 }
 
-function updateIdea(id, qualityObject, updatedQualityHtml) {
-  qualityObject.html(updatedQualityHtml);
+function updateIdea(id, updatedObject, updatedHtml) {
+  updatedObject.html(updatedHtml);
 }
 
 function increaseQuality(quality) {
