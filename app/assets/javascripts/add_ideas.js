@@ -9,6 +9,6 @@ function saveIdea () {
 }
 
 function clearFields () {
-  $('#title').val(''),
-  $('#body').val('')
+  $('#title').val('');
+  $('#body').val('');
 }
