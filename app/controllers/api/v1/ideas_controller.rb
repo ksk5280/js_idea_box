@@ -8,7 +8,6 @@ class Api::V1::IdeasController < ApiController
   end
 
   def update
-    # binding.pry
     idea = Idea.find(params[:id])
     respond_with idea.update(idea_params)
   end

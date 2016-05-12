@@ -12,7 +12,8 @@ function renderIdea(response) {
   content += sprintf('class="delete-button">%s</button>', 'Delete');
   content += sprintf('<button type="button" id="%s"', response.id);
   content += sprintf('class="thumbs-up">%s</button>', 'thumbs up');
-  content += sprintf('<button type="button" class="thumbs-down">%s</button>', 'thumbs down');
+  content += sprintf('<button type="button" id="%s"', response.id);
+  content += sprintf('class="thumbs-down">%s</button>', 'thumbs down');
   content += '</div>';
 
   ideaDiv = $(content);
@@ -23,6 +24,9 @@ function renderIdea(response) {
 
   thumbsUpButton = ideaDiv.find('.thumbs-up');
   thumbsUpButton.on('click', thumbsUpClicked);
+
+  thumbsDownButton = ideaDiv.find('.thumbs-down');
+  thumbsDownButton.on('click', thumbsDownClicked);
 }
 
 function getIdeas() {
