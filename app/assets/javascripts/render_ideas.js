@@ -4,16 +4,20 @@ function renderIdea(response) {
     deleteButton,
     content = '';
 
-  content += sprintf('<div class="idea" id="idea-%s">', response.id);
+  content += sprintf('<div class="idea .col-md-6" id="idea-%s">', response.id);
   content += sprintf('<h3 class="title">%s</h3>', response.title);
   content += sprintf('<h5 class="body">%s</h5>', response.body);
   content += sprintf('<p class="quality">%s</p>', response.quality);
+  content += sprintf('<button type="button" id="%s"', response.id);
+  content += sprintf('class="thumbs-up btn btn-default">');
+  content += sprintf('<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">');
+  content += sprintf('</span></button>');
+  content += sprintf('<button type="button" id="%s"', response.id);
+  content += sprintf('class="thumbs-down btn btn-default">');
+  content += sprintf('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">');
+  content += sprintf('</span></button>');
   content += sprintf('<button type="button" name="delete" id="%s"', response.id);
-  content += sprintf('class="delete-button">%s</button>', 'Delete');
-  content += sprintf('<button type="button" id="%s"', response.id);
-  content += sprintf('class="thumbs-up">%s</button>', 'thumbs up');
-  content += sprintf('<button type="button" id="%s"', response.id);
-  content += sprintf('class="thumbs-down">%s</button>', 'thumbs down');
+  content += sprintf('class="delete-button btn btn-danger">%s</button>', 'Delete');
   content += '</div>';
 
   ideaDiv = $(content);

@@ -9,22 +9,22 @@ RSpec.feature "User can change the quality of an idea" do
     expect(page).to have_content "Idea title"
     expect(page).to have_content "swill"
 
-    click_on "thumbs up"
+    page.find(".thumbs-up").click
     expect(page).to have_content "plausible"
 
-    click_on "thumbs up"
+    page.find(".thumbs-up").click
     expect(page).to have_content "genius"
 
-    click_on "thumbs up"
+    page.find(".thumbs-up").click
     expect(page).to have_content "genius"
 
-    click_on "thumbs down"
+    page.find(".thumbs-down").click
     expect(page).to have_content "plausible"
 
-    click_on "thumbs down"
+    page.find(".thumbs-down").click
     expect(page).to have_content "swill"
 
-    click_on "thumbs down"
+    page.find(".thumbs-down").click
     expect(page).to have_content "swill"
   end
 end
