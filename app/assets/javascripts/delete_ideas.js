@@ -3,10 +3,10 @@ $('body').on('click', 'button.delete-button', function() {
   $.ajax({
     url: "api/v1/ideas/" + this.id,
     method: "DELETE",
-    success: ideaDeleted()
+    success: ideaDeleted(this.id)
   });
 })
 
-var ideaDeleted = function() {
-  console.log('works!');
+var ideaDeleted = function(id) {
+  $('#idea-' + id).remove();
 }

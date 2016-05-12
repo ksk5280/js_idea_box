@@ -16,7 +16,7 @@ function clearFields () {
 function ideaSaved (response) {
   var content = '';
 
-  content += '<div class="idea">';
+  content += sprintf('<div class="idea" id="idea-%s">', response.id);
   content += sprintf('<h3 class="title">%s</h3>', response.title);
   content += sprintf('<h5 class="body">%s</h5>', response.body);
   content += sprintf('<p class="quality">%s</p>', 'swill');

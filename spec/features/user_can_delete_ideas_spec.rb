@@ -12,7 +12,7 @@ RSpec.feature "User can delete ideas" do
 
     first('.idea').click_on "Delete"
 
-    expect(page).to_not have_content "Idea title 1"
-    expect(page).to have_content "Idea title 2"
+    expect(page).to_not have_content "Idea title 2"
+    expect(page).to have_content "Idea title 1"
   end
 end
