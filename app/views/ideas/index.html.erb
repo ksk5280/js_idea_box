@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="row">Idea Respository</h1>
+  <h1 class="row">Idea Repository</h1>
   <div class="row">
     <h3>Add a new idea!</h3>
     <%= form_tag('/api/v1/ideas', remote: true) do %>
@@ -11,6 +11,11 @@
       </div>
         <%= button_tag "Save", type: 'button', class: 'btn btn-info', onclick: 'saveIdea();' %>
     <% end %>
+  </div>
+
+  <div class="row">
+    <h3>Search your ideas</h3>
+    <%= text_field_tag 'search', nil, placeholder: 'Enter search words here...', class: 'form-control' %>
   </div>
 
   <div id="ideas" class="ideas row">

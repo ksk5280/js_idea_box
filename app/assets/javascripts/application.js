@@ -18,3 +18,7 @@
 $(document).ready(function() {
   getIdeas();
 });
+
+function ajaxPrintError(req, status, err) {
+  console.log( 'something went wrong with the ajax call', status, err);
+}
