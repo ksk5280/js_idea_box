@@ -19,4 +19,15 @@ RSpec.feature "User can add ideas" do
       expect(page).to have_content "Idea Body"
     end
   end
+
+  context "they do not fill in a body" do
+    scenario "they see an error message" do
+      visit "/"
+
+      fill_in "Title", with: "Idea Title"
+      click_button "Save"
+
+      expect(page).to have_content "Fill in a title and body for your idea!"
+    end
+  end
 end
