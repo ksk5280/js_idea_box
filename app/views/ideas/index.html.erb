@@ -1,5 +1,10 @@
 <div class="container">
   <h1 class="row">Idea Repository</h1>
+
+  <div class="row" id="error-message">
+    <h4>Fill in a title and body for your idea!</h4>
+  </div>
+
   <div class="row">
     <h3>Add a new idea!</h3>
     <%= form_tag('/api/v1/ideas', remote: true) do %>
