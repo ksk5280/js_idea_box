@@ -16,7 +16,7 @@ RSpec.feature "Use can see all ideas" do
     expect(page).to have_content "swill"
   end
 
-  xscenario "they see a truncated body if it's longer than 100 characters", js: true do
+  scenario "they see a truncated body if it's longer than 100 characters", js: true do
     Idea.create(title: "Idea title", body: "This is a really long body "\
       "for my great idea that I am super excited to share with the world. "\
       "I think that everyone is going to really like this great idea!")
