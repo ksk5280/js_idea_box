@@ -8,7 +8,7 @@ function renderIdea(response) {
   content += sprintf('<h3 class="title" id="%s"', response.id);
   content += sprintf('contenteditable="true">%s</h3>', response.title);
   content += sprintf('<h5 class="body" id="%s"', response.id);
-  content += sprintf('contenteditable="true">%s</h5>', response.body);
+  content += sprintf('contenteditable="true">%s</h5>', trimBody(response.body, 100));
   content += sprintf('<p class="quality">%s</p>', response.quality);
   content += sprintf('<button type="button" id="%s"', response.id);
   content += sprintf('class="thumbs-up btn btn-default">');
@@ -38,4 +38,14 @@ function getIdeas() {
       renderIdea(idea);
     });
   });
+}
+
+function trimBody(bodyText, maxLength) {
+  if (bodyText.length > maxLength) {
+    var trimmedString = bodyText.substr(0, maxLength);
+    trimmedString = trimmedString.substr(0, Math.min(maxLength, trimmedString.lastIndexOf(" ")));
+    return trimmedString + "...";
+  } else {
+    return bodyText;
+  }
 }
