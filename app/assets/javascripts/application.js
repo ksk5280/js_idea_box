@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+//= require sprintf.min
 
 $(document).ready(function() {
   getIdeas();
