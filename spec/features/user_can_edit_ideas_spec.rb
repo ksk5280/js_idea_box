@@ -12,9 +12,6 @@ RSpec.feature "User can edit ideas" do
     input.native.send_keys(:return)
 
     expect(page).to have_content "Updated Title"
-
-    visit "/"
-    expect(page).to have_content "Updated Title"
   end
 
   scenario "they can edit body", js: true do
@@ -27,9 +24,6 @@ RSpec.feature "User can edit ideas" do
     input.set("Updated Body")
     input.native.send_keys(:return)
 
-    expect(page).to have_content "Updated Body"
-
-    visit "/"
     expect(page).to have_content "Updated Body"
   end
 end

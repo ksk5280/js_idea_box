@@ -1,9 +1,5 @@
 function saveIdea () {
-  var
-    data = {
-      'title': $('#title').val(),
-      'body': $('#body').val()
-    };
+  var data = $('form').serialize();
   $.post('/api/v1/ideas', data, renderIdea);
   clearFields();
 }
