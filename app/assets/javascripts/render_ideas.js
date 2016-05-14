@@ -5,9 +5,9 @@ function renderIdea(response) {
     content = '';
 
   content += sprintf('<div class="idea" id="idea-%s">', response.id);
-  content += sprintf('<h3 class="title" id="%s"', response.id);
+  content += sprintf('<h3 class="title hide-overflow" id="%s"', response.id);
   content += sprintf('contenteditable="true">%s</h3>', response.title);
-  content += sprintf('<h5 class="body" id="%s"', response.id);
+  content += sprintf('<h5 class="body hide-overflow" id="%s"', response.id);
   content += sprintf('contenteditable="true">%s</h5>', trimBody(response.body, 100));
   content += sprintf('<p class="quality">%s</p>', response.quality);
   content += sprintf('<button type="button" id="%s"', response.id);
