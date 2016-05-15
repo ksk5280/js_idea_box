@@ -1,4 +1,4 @@
-function sortQuality() {
+function showSortList(event) {
   document.getElementById("quality-dropdown").classList.toggle("show");
 }
 
@@ -17,7 +17,23 @@ window.onclick = function(event) {
 };
 
 function sortDesc() {
-  console.log('sort Desc');
+  var
+    $ideas = $('.idea'),
+    $ideasParent = $ideas.parent(),
+    $ideasSorted = _.sortBy($ideas, function(idea) {
+      var
+        ideaValues = { 'genius': 0, 'plausible': 1, 'swill': 2 },
+        $idea = $(idea),
+        qualityObject = $idea.find('.quality'),
+        quality = qualityObject.text();
+
+      return ideaValues[quality];
+    });
+  _.each($ideasSorted, function (idea, index) {
+    var $idea = $(idea);
+    $idea.detach();
+    $ideasParent.append($idea);
+  });
 }
 
 function sortAsc() {

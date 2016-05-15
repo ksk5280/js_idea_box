@@ -15,9 +15,12 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require sprintf.min
+//= require lodash.min
 
 $(document).ready(function() {
   getIdeas();
+  $('#sort-desc').on('click', sortDesc);
+  $('#sort-asc').on('click', sortAsc);
 });
 
 function ajaxPrintError(req, status, err) {
