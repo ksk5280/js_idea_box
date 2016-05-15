@@ -37,5 +37,21 @@ function sortDesc() {
 }
 
 function sortAsc() {
-  console.log('sortAsc');
+  var
+    $ideas = $('.idea'),
+    $ideasParent = $ideas.parent(),
+    $ideasSorted = _.sortBy($ideas, function(idea) {
+      var
+        ideaValues = { 'genius': 2, 'plausible': 1, 'swill': 0 },
+        $idea = $(idea),
+        qualityObject = $idea.find('.quality'),
+        quality = qualityObject.text();
+
+      return ideaValues[quality];
+    });
+  _.each($ideasSorted, function (idea, index) {
+    var $idea = $(idea);
+    $idea.detach();
+    $ideasParent.append($idea);
+  });
 }
