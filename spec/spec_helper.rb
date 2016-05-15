@@ -27,3 +27,7 @@ RSpec.configure do |config|
 
   SimpleCov.start("rails")
 end
+
+def json_response
+  JSON.parse(response.body)
+end
