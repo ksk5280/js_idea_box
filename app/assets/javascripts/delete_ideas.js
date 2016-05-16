@@ -1,14 +1,17 @@
 function deleteButtonClicked () {
+  var
+    targetId = this.id.split('-')[0];
+
   $.ajax({
-    url: "api/v1/ideas/" + this.id,
+    url: "api/v1/ideas/" + targetId,
     method: "DELETE",
-    success: ideaDeleted(this.id),
+    success: ideaDeleted(targetId),
     error: ajaxPrintError
   });
 }
 
 function ideaDeleted (id) {
-  $('#idea-' + id).fadeOut(500, function() {
+  $(sprintf('#%s-idea', id)).fadeOut(500, function() {
     $(this).remove();
   });
 }
