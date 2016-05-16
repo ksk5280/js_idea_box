@@ -26,10 +26,10 @@ function renderIdea(response) {
   $('#ideas').prepend(ideaDiv);
 
 // Add event listeners
-  $('.delete-button').on('click', deleteButtonClicked);
-  $('.thumbs-up').on('click', changeQuality);
-  $('.thumbs-down').on('click', changeQuality);
-  $("[contenteditable='true']").on('focus', editIdeas);
+  ideaDiv.find('.delete-button').on('click', deleteButtonClicked);
+  ideaDiv.find('.thumbs-up').on('click', changeQuality);
+  ideaDiv.find('.thumbs-down').on('click', changeQuality);
+  ideaDiv.find("[contenteditable='true']").on('focus', editIdeas);
 }
 
 function getIdeas() {
