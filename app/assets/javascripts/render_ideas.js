@@ -19,7 +19,7 @@ function renderIdea(response) {
   content += sprintf('<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">');
   content += sprintf('</span></button>');
   content += sprintf('<button type="button" name="delete" id="%s"', response.id);
-  content += sprintf('class="delete-button btn btn-danger">%s</button>', 'Delete');
+  content += sprintf('class="delete-button btn">%s</button>', 'Delete');
   content += '</div>';
 
   ideaDiv = $(content);
