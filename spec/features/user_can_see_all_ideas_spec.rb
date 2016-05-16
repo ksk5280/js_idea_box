@@ -37,6 +37,6 @@ RSpec.feature "Use can see all ideas" do
 
     visit "/"
 
-    expect(page.body.index(newer_idea.title)).to be < page.body.index(older_idea.title)
+    expect(newer_idea.title).to appear_before(older_idea.title)
   end
 end

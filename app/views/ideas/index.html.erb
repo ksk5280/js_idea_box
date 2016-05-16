@@ -21,7 +21,16 @@
   <div class="row">
     <h3>Search your ideas</h3>
     <%= text_field_tag 'search', nil, placeholder: 'Enter search words here...',
-      class: 'form-control', id: 'search-bar' %>
+      id: 'search-bar' %>
+    <div class="dropdown">
+      <button type="button" onclick="showSortList()" class="btn btn-primary
+        dropdown-toggle" data-toggle="dropdown">Sort Ideas
+      <span class="caret"></span></button>
+      <div id="quality-dropdown" class="dropdown-content">
+        <a id="sort-desc">Sort by best ideas first</a>
+        <a id="sort-asc">Sort by worst ideas first</a>
+      </div>
+    </div>
   </div>
 
   <div id="ideas" class="ideas row">

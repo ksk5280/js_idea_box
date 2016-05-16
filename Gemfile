@@ -23,6 +23,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'teaspoon'
   gem 'teaspoon-mocha'
+  gem 'orderly'
 end
 
 group :test do
