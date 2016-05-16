@@ -1,13 +1,25 @@
 $font-stack: 'PT Sans', sans-serif;
+$primary: #6ed3cf;
+$secondary: #9068be;
+$light: #e1e8f0;
+$error: #5e0231;
 
 body {
   font-family: $font-stack;
+  padding:0 10px 20px 10px;
+  color: $error;
+  background-color: $light;
+}
+
+.container {
+  max-width: 500px;
 }
 
 #error-message {
+  padding-left: 20px;
   height: 40px;
   font-weight: bold;
-  background-color: red;
+  background-color: $error;
   color: white;
   display: none;
 }
@@ -41,7 +53,47 @@ body {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
 
 /* Show the dropdown menu */
-.show {display:block;}
+.show {
+  display:block;
+}
+
+/* Idea Div */
+.idea {
+  padding: 10px;
+  margin: 10px 0;
+  color: white;
+  background-color: $primary;
+  border-radius: 5px;
+}
+
+.delete-button {
+  color: white;
+  background-color: $error;
+}
+
+.save-button {
+  color: white;
+  background-color: $secondary;
+  width: 70px;
+}
+
+.sort-button {
+  color: white;
+  background-color: $secondary;
+  border: none;
+  position: relative;
+  left: 100px;
+}
+
+#search-bar {
+  height: 34px;
+  width: 300px;
+  padding-left: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

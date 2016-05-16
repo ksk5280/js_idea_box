@@ -14,7 +14,7 @@
       <div class="form-group">
         <%= text_area_tag 'body', nil, placeholder: 'Body', class: "form-control" %>
       </div>
-        <%= button_tag "Save", type: 'button', class: 'btn btn-info', onclick: 'saveIdea();' %>
+        <%= button_tag "Save", type: 'button', class: 'save-button btn', onclick: 'saveIdea();' %>
     <% end %>
   </div>
 
@@ -23,7 +23,7 @@
     <%= text_field_tag 'search', nil, placeholder: 'Enter search words here...',
       id: 'search-bar' %>
     <div class="dropdown">
-      <button type="button" onclick="showSortList()" class="btn btn-primary
+      <button type="button" onclick="showSortList()" class="btn sort-button
         dropdown-toggle" data-toggle="dropdown">Sort Ideas
       <span class="caret"></span></button>
       <div id="quality-dropdown" class="dropdown-content">
