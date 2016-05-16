@@ -1,25 +1,23 @@
-function editIdeas (event) {
+function ideaEditBlur (e) {
   var
-    $this = $(this);
-    contentId = $this[0].id;
-    className = $this.attr("class");
-
-  $this.keypress(function(event) {
-    if(event.which === 13) {
-      this.blur();
-      event.preventDefault();
-    }
-  });
-
-  $this.blur(function(){
-    newText = $this.html();
-    changeData(contentId, newText, className);
-  });
+    $this = $(this),
+    content = $this.html(),
+    contentId = this.id.split('-')[0],
+    contentKey = this.getAttribute('data-key');
+  changeData(contentId, content, contentKey);
 }
 
-function changeData(id, newText, className) {
+function ideaEditKeypress (e) {
+  if (e.keyCode === 13) { // Enter key
+    e.preventDefault();
+    this.blur();
+  }
+}
+
+
+function changeData(id, newText, key) {
   var data = {};
-  data[className] = newText;
+  data[key] = newText;
 
   $.ajax({
     url: "api/v1/ideas/" + id,

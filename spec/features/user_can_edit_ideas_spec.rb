@@ -7,7 +7,7 @@ RSpec.feature "User can edit ideas" do
     visit "/"
 
     expect(page).to have_content "Original Title"
-    input = find(".title")
+    input = find_by_id("1-title")
     input.set("Updated Title")
     input.native.send_keys(:return)
 
@@ -20,7 +20,7 @@ RSpec.feature "User can edit ideas" do
     visit "/"
 
     expect(page).to have_content "Original idea body"
-    input = find(".body")
+    input = find_by_id("1-body")
     input.set("Updated Body")
     input.native.send_keys(:return)
 
