@@ -11,6 +11,7 @@ RSpec.feature "User can create an account" do
 
     fill_in "Username", with: "New User"
     fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
     click_on "Submit"
 
     user = User.last

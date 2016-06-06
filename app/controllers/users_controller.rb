@@ -17,11 +17,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user 
+    @user = current_user
   end
 
   private
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :password, :password_confirmation)
     end
 end
