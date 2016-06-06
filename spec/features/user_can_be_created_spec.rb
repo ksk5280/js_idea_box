@@ -7,6 +7,8 @@ RSpec.feature "User can create an account" do
     click_on "Create Account"
     expect(current_path).to eq "/users/new"
 
+    expect(page).to have_content "Log In or Sign Up"
+
     fill_in "Username", with: "New User"
     fill_in "Password", with: "password"
     click_on "Submit"

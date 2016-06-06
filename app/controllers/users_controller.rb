@@ -7,15 +7,17 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      session[:user_id] = @user.id
       flash[:success] = "Welcome #{@user.username}!"
       redirect_to user_path(@user)
     else
-      flash[:error] = user.errors.full_messages
+      # re-render if validations don't pass
+      # flash[:error] = user.errors.full_messages
     end
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user 
   end
 
   private
