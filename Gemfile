@@ -12,6 +12,7 @@ gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'coffee-rails'
 gem 'sprockets-rails', '2.3.3'
 gem 'selenium-webdriver'
+gem 'bcrypt', '~> 3.1.7'
 gem 'rails_12factor', group: :production
 group :development, :test do
   gem 'pry'
